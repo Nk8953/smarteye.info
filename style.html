@@ -1,0 +1,264 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+}
+
+
+header{
+    width:100%;
+    background:#061b3a;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#00d9ff;
+}
+
+.logo span{
+    display:block;
+    font-size:13px;
+    color:white;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:16px;
+}
+
+nav a:hover{
+    color:#00d9ff;
+}
+
+
+/* Hero Section */
+
+.hero{
+
+    min-height:90vh;
+    background:
+    linear-gradient(
+    rgba(3,20,45,0.85),
+    rgba(3,20,45,0.85)
+    ),
+    url("../images/banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+
+.hero-content{
+    max-width:700px;
+}
+
+
+.hero h1{
+    font-size:48px;
+    color:#00d9ff;
+    margin-bottom:15px;
+}
+
+
+.hero h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+
+.hero p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+
+.btn{
+
+    display:inline-block;
+    margin:25px 8px;
+    padding:14px 30px;
+    background:#00d9ff;
+    color:#00152f;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+
+}
+
+
+.whatsapp{
+    background:#25d366;
+    color:white;
+}
+
+
+/* Sections */
+
+section{
+
+    padding:60px 8%;
+    text-align:center;
+
+}
+
+
+section h2{
+
+    font-size:35px;
+    color:#061b3a;
+    margin-bottom:25px;
+
+}
+
+
+section p{
+
+    font-size:18px;
+    line-height:1.7;
+
+}
+
+
+
+/* Service Cards */
+
+
+.cards{
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+
+}
+
+
+.card{
+
+    width:260px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px #ccc;
+
+    transition:.3s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.card h3{
+
+    color:#061b3a;
+    margin-bottom:15px;
+
+}
+
+
+
+/* Footer */
+
+
+footer{
+
+    background:#061b3a;
+    color:white;
+    text-align:center;
+    padding:20px;
+
+}
+
+
+/* Floating WhatsApp */
+
+.floating-whatsapp{
+
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    background:#25d366;
+    color:white;
+
+    padding:15px 20px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+
+/* Mobile Design */
+
+
+@media(max-width:768px){
+
+header{
+
+    flex-direction:column;
+
+}
+
+
+nav{
+
+    margin-top:15px;
+
+}
+
+
+.hero h1{
+
+    font-size:34px;
+
+}
+
+
+.hero h2{
+
+    font-size:22px;
+
+}
+
+
+.cards{
+
+    flex-direction:column;
+    align-items:center;
+
+}
+
+}

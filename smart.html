@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartEye Tech Solutions | CCTV Security Prayagraj</title>
+    <meta name="description" content="SmartEye Tech Solutions provides CCTV installation, security systems, networking and computer solutions in Prayagraj.">
+    
+    <style>
+        /* --- CSS STYLE START --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            width: 100%;
+            background: #061b3a;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 13px;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: #00d9ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 70vh;
+            background: linear-gradient(rgba(3,20,45,0.85), rgba(3,20,45,0.85)), url("images/banner.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #00d9ff;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 25px 8px;
+            padding: 14px 30px;
+            background: #00d9ff;
+            color: #00152f;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 35px;
+            color: #061b3a;
+            margin-bottom: 25px;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Service & Product Cards */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 280px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #ccc;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #061b3a;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #061b3a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 999;
+        }
+
+        /* Navigation Pages Control */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active-page {
+            display: block;
+        }
+
+        /* Mobile Design */
+        @media(max-width:768px){
+            header {
+                flex-direction: column;
+            }
+            nav {
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .hero h1 {
+                font-size: 34px;
+            }
+            .hero h2 {
+                font-size: 22px;
+            }
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        /* --- CSS STYLE END --- */
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            SmartEye
+            <span>Tech Solutions</span>
+        </div>
+        <nav>
+            <a onclick="switchPage('home')" id="nav-home" class="active">Home</a>
+            <a onclick="switchPage('about')" id="nav-about">About</a>
+            <a onclick="switchPage('services')" id="nav-services">Services</a>
+            <a onclick="switchPage('products')" id="nav-products">Products</a>
+            <a onclick="switchPage('gallery')" id="nav-gallery">Gallery</a>
+            <a onclick="switchPage('contact')" id="nav-contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ================= HOME PAGE ================= -->
+    <div id="page-home" class="page-content active-page">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>SmartEye Tech Solutions</h1>
+                <h2>Your Safety, Our Technology</h2>
+                <p>Professional CCTV Installation, Security Systems, Networking & Computer Solutions in Prayagraj.</p>
+                <a href="tel:+918953706134" class="btn">Call Now</a>
+                <a href="https://wa.me/917054928312" class="btn whatsapp">WhatsApp</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Welcome to SmartEye Tech Solutions</h2>
+            <p>We provide reliable CCTV and security solutions for homes, offices, shops, schools and industries. We deliver professional installation and technical support across Prayagraj.</p>
+            <button class="btn" onclick="switchPage('services')">Explore Our Services</button>
+        </section>
+    </div>
+
+    <!-- ================= ABOUT PAGE ================= -->
+    <div id="page-about" class="page-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>About SmartEye</h1>
+                <h2>Your Trusted Security Partner</h2>
+                <p>SmartEye Tech Solutions is a professional CCTV and technology service provider based in Prayagraj, Uttar Pradesh.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Who We Are</h2>
+            <p>SmartEye Tech Solutions provides advanced CCTV, security surveillance, networking and computer solutions for homes, offices, shops, schools, colleges and industries.</p>
+            <p>Our goal is to provide reliable technology solutions with professional installation, quality products and excellent customer support.</p>
+        </section>
+
+        <section style="background: #eef2f7;">
+            <h2>Our Mission</h2>
+            <p>To deliver smart, secure and affordable technology solutions that help our customers protect their properties and businesses.</p>
+        </section>
+
+        <section>
+            <h2>Why Choose Us?</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Professional Team</h3>
+                    <p>Experienced technicians for installation and support.</p>
+                </div>
+                <div class="card">
+                    <h3>Quality Products</h3>
+                    <p>Reliable CCTV and security equipment.</p>
+                </div>
+                <div class="card">
+                    <h3>Fast Service</h3>
+                    <p>Quick installation and customer assistance.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= SERVICES PAGE ================= -->
+    <div id="page-services" class="page-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our Services</h1>
+                <h2>Complete Security & Technology Solutions</h2>
+                <p>Professional CCTV, Networking and Computer Solutions for homes and businesses.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Security Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>📹 CCTV Installation</h3>
+                    <p>HD, Full HD, IP Camera and Wireless CCTV installation with professional setup.</p>
+                </div>
+                <div class="card">
+                    <h3>🔒 DVR & NVR Setup</h3>
+                    <p>Complete DVR/NVR installation, configuration and remote mobile monitoring.</p>
+                </div>
+                <div class="card">
+                    <h3>🏢 Commercial Security</h3>
+                    <p>Security solutions for offices, shops, schools, colleges and industries.</p>
+                </div>
+                <div class="card">
+                    <h3>📱 Remote Monitoring</h3>
+                    <p>View your CCTV cameras anytime from your smartphone.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #eef2f7;">
+            <h2>Technology Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🌐 Networking</h3>
+                    <p>LAN cabling, WiFi setup, router configuration and network solutions.</p>
+                </div>
+                <div class="card">
+                    <h3>💻 Computer Repair</h3>
+                    <p>Laptop and desktop repair, software installation and maintenance.</p>
+                </div>
+                <div class="card">
+                    <h3>🖥️ System Installation</h3>
+                    <p>Computer setup and office IT support.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= PRODUCTS PAGE ================= -->
+    <div id="page-products" class="page-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our Products</h1>
+                <h2>Smart Security Equipment</h2>
+                <p>High quality CCTV and technology products for complete security solutions.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>CCTV Products</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>📹 HD CCTV Camera</h3>
+                    <p>High resolution cameras for home, office and commercial security.</p>
+                </div>
+                <div class="card">
+                    <h3>🌐 IP Camera</h3>
+                    <p>Advanced network cameras with remote viewing features.</p>
+                </div>
+                <div class="card">
+                    <h3>💾 DVR / NVR</h3>
+                    <p>Secure video recording and storage solutions.</p>
+                </div>
+                <div class="card">
+                    <h3>📱 WiFi Camera</h3>
+                    <p>Wireless smart cameras with mobile monitoring.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #eef2f7;">
+            <h2>Other Security Products</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🔐 Biometric System</h3>
+                    <p>Fingerprint and face recognition attendance systems.</p>
+                </div>
+                <div class="card">
+                    <h3>🚪 Video Door Phone</h3>
+                    <p>Smart visitor monitoring systems for homes and offices.</p>
+                </div>
+                <div class="card">
+                    <h3>🔌 Networking Equipment</h3>
+                    <p>Router, switches, cables and network accessories.</p>
+                </div>
+                <div class="card">
+                    <h3>🖥️ Computer Accessories</h3>
+                    <p>Desktop, laptop accessories and IT solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Trusted Brands</h2>
+            <p><strong>Hikvision | Dahua | CP Plus | TP-Link | Honeywell | UNV</strong></p>
+        </section>
+    </div>
+
+    <!-- ================= GALLERY PAGE ================= -->
+    <div id="page-gallery" class="page-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our Gallery</h1>
+                <h2>Security Installation Projects</h2>
+                <p>A glimpse of our CCTV installation and technology solutions.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Work</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="images/cctv1.jpg" alt="CCTV Installation" style="width:100%; border-radius:10px; margin-bottom: 10px;">
+                    <h3>CCTV Installation</h3>
+                    <p>Professional camera installation for homes and businesses.</p>
+                </div>
+                <div class="card">
+                    <img src="images/cctv2.jpg" alt="Security Camera" style="width:100%; border-radius:10px; margin-bottom: 10px;">
+                    <h3>Security Solutions</h3>
+                    <p>Advanced surveillance systems with remote monitoring.</p>
+                </div>
+                <div class="card">
+                    <img src="images/network.jpg" alt="Networking" style="width:100%; border-radius:10px; margin-bottom: 10px;">
+                    <h3>Networking Work</h3>
+                    <p>LAN and network setup services.</p>
+                </div>
+                <div class="card">
+                    <img src="images/system.jpg" alt="Computer Services" style="width:100%; border-radius:10px; margin-bottom: 10px;">
+                    <h3>Computer Services</h3>
+                    <p>Laptop and desktop solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #eef2f7;">
+            <h2>Real Projects</h2>
+            <p>Upload your real CCTV installation photos in the <strong>images</strong> folder and replace these demo image paths.</p>
+        </section>
+    </div>
+
+    <!-- ================= CONTACT PAGE ================= -->
+    <div id="page-contact" class="page-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <h2>Get Your Security Solution Today</h2>
+                <p>Contact SmartEye Tech Solutions for CCTV, Networking and Computer Services.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Get In Touch</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>📍 Address</h3>
+                    <p>Near CMP College,<br>Prayagraj, Uttar Pradesh, India</p>
+                </div>
+                <div class="card">
+                    <h3>📞 Phone</h3>
+                    <p>+91 8953706134<br>+91 7054928312</p>
+                </div>
+                <div class="card">
+                    <h3>🕒 Business Hours</h3>
+                    <p>Monday - Saturday<br>9:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #eef2f7;">
+            <h2>Send Message</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <input type="email" placeholder="Email Address">
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Find Us</h2>
+            <iframe src="https://www.google.com/maps?q=CMP%20College%20Prayagraj&output=embed" width="100%" height="350" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a class="floating-whatsapp" href="https://wa.me/917054928312" target="_blank">WhatsApp</a>
+
+    <footer>
+        <p>© 2026 SmartEye Tech Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT START ---
+        
+        // Single Page Routing Control
+        function switchPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active-page'));
+            
+            // Remove active style from nav links
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Show targeted page
+            document.getElementById('page-' + pageId).classList.add('active-page');
+            
+            // Highlight current nav link
+            document.getElementById('nav-' + pageId).classList.add('active');
+            
+            // Scroll smoothly to top on page switch
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Service Card Intersection Observer Animation
+        const cards = document.querySelectorAll(".card");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(30px)";
+            card.style.transition = "0.5s ease-out";
+            observer.observe(card);
+        });
+
+        // Current Dynamic Year Update
+        const currentYear = new Date().getFullYear();
+        const footerText = document.querySelector("footer p");
+        if(footerText){
+            footerText.innerHTML = "© " + currentYear + " SmartEye Tech Solutions. All Rights Reserved.";
+        }
+        // --- JAVASCRIPT END ---
+    </script>
+</body>
+</html>
